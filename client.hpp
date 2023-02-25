@@ -4,13 +4,14 @@
 #include <iostream>
 
 class Client {
+public:
+    static int id;
 private:
-    int id;
     int client_fd;
     std::string ip;
 
 public:
-    Client() : id(0), client_fd(0) {}
+    Client();
     void setID(int myid) { id = myid; }
     int getID() { return id; }
     void setFd(int my_client_fd) { client_fd = my_client_fd; }

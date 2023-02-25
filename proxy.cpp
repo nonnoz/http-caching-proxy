@@ -16,16 +16,16 @@
 
 using namespace std;
 
-std::ofstream log("/var/log/erss/proxy.log");
+std::ofstream logFile("/var/log/erss/proxy.log");
 
 int main(){
     const char * port = "12345";
-    Client myclient = create_server(NULL, port);
-    while(1){
+    int socket_fd = create_server(NULL, port);
+    /*while(1){
         struct sockaddr_storage socket_addr;
         socklen_t socket_addr_len = sizeof(socket_addr);
         Client myclient;
-        int temp = accept(server_proxy_fd, (struct sockaddr *)&socket_addr, &socket_addr_len);
+        int temp = accept(socket_fd, (struct sockaddr *)&socket_addr, &socket_addr_len);
         myclient.setFd(temp);
         if (myclient.getFd() == -1) {
             cerr << "Error: cannot accept connection on socket" << endl;
@@ -40,9 +40,8 @@ int main(){
         //connect
 
         //get
-    }
+    }*/
     
-    freeaddrinfo(host_info_list);
-    close(server_proxy_fd);
+    close(socket_fd);
     return -1;
 }

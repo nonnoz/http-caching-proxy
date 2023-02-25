@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Client create_server(const char* hostname, const char* port){
+int create_server(const char* hostname, const char* port){
     int status;
     int socket_fd;
     struct addrinfo host_info;
@@ -44,6 +44,8 @@ Client create_server(const char* hostname, const char* port){
         cerr << "  (" << hostname << "," << port << ")" << endl;
         return -1;
     }
+    freeaddrinfo(host_info_list);
+    return socket_fd;
 }
 
 int create_client(const char * hostname, const char * port){

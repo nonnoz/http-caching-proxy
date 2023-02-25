@@ -1,5 +1,4 @@
 #include "client.hpp"
-#include "stdafx.h"
 
 int Client::id = -1;
 
