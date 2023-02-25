@@ -21,7 +21,7 @@ std::ofstream logFile("/var/log/erss/proxy.log");
 int main(){
     const char * port = "12345";
     int socket_fd = create_server(NULL, port);
-    /*while(1){
+    while(1){
         struct sockaddr_storage socket_addr;
         socklen_t socket_addr_len = sizeof(socket_addr);
         Client myclient;
@@ -40,7 +40,7 @@ int main(){
         //connect
 
         //get
-    }*/
+    }
     
     close(socket_fd);
     return -1;
