@@ -11,8 +11,8 @@
 #include <arpa/inet.h>
 #include <fstream>
 
-#include "tcp.hpp"
-#include "client.hpp"
+#include "tcp.h"
+#include "client.h"
 
 using namespace std;
 
