@@ -32,13 +32,13 @@ struct Request {
     std::vector<char> content;
     bool keepAlive;
 
-    std::string inspect() const
+    std::string line() const
     {
         std::stringstream stream;
         stream << method << " " << uri << " HTTP/"
                << versionMajor << "." << versionMinor << "\n";
-
-        for(std::vector<Request::HeaderItem>::const_iterator it = headers.begin();
+        return stream;
+        /*for(std::vector<Request::HeaderItem>::const_iterator it = headers.begin();
             it != headers.end(); ++it)
         {
             stream << it->name << ": " << it->value << "\n";
@@ -47,7 +47,7 @@ struct Request {
         std::string data(content.begin(), content.end());
         stream << data << "\n";
         stream << "+ keep-alive: " << keepAlive << "\n";;
-        return stream.str();
+        return stream.str();*/
     }
 };
 

@@ -33,13 +33,13 @@ struct Response {
     unsigned int statusCode;
     std::string status;
 
-    std::string inspect() const
+    std::string line() const
     {
         std::stringstream stream;
         stream << "HTTP/" << versionMajor << "." << versionMinor
                << " " << statusCode << " " << status << "\n";
-
-        for(std::vector<Response::HeaderItem>::const_iterator it = headers.begin();
+        return stream.str();
+    /*    for(std::vector<Response::HeaderItem>::const_iterator it = headers.begin();
             it != headers.end(); ++it)
         {
             stream << it->name << ": " << it->value << "\n";
@@ -48,7 +48,7 @@ struct Response {
         std::string data(content.begin(), content.end());
         stream << data << "\n";
         return stream.str();
-    }
+    }*/
 };
 
 } // namespace httpparser
