@@ -62,7 +62,7 @@ void proxy_begin(Client myclient){
                         pthread_mutex_lock(&mutex);
                         logFile << myclient_info->getID() << ": Received \"" << response.line() << "\" from " << host() << std::endl;
                         pthread_mutex_unlock(&mutex);
-                        send(client_fd, myresponse, myresponse_len, MSG_NOSIGNAL);
+                        send(myclient.getFd(), myresponse, myresponse_len, MSG_NOSIGNAL);
                         pthread_mutex_lock(&mutex);
                         logFile << myclient_info->getID() << ": Responding \"" << response.line() << std::endl;
                         pthread_mutex_unlock(&mutex);
@@ -93,4 +93,6 @@ void proxy_begin(Client myclient){
             logFile << client_info->getID() << ": Responding \"HTTP/1.1 400 Bad Request\"" << std::endl;
             pthread_mutex_unlock(&mutex);
         }
+        close(server_fd);
+        close(myclient.getFd());
 }

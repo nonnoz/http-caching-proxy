@@ -11,7 +11,6 @@
 #include <sstream>
 
 namespace httpparser
-{
 
 struct Response {
     Response()
