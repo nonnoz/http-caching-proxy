@@ -3,7 +3,7 @@
 #include <netdb.h>
 #include <netinet/in.h>
 #include <sys/select.h>
-#include <thread>
+#include <pthread.h>
 #include <unistd.h>
 #include <string>
 #include <iostream>
@@ -16,6 +16,7 @@
 
 using namespace std;
 
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 std::ofstream logFile("/var/log/erss/proxy.log");
 
 int main(){
@@ -35,6 +36,7 @@ int main(){
         struct sockaddr_in * addr = (struct sockaddr_in *)&socket_addr;
         myclient.setIP(inet_ntoa(addr->sin_addr));
         //thread to begin our proxy
+        pthread_t thread;
         pthread_create(&thread, NULL, proxy_begin, myclient);
     }
     

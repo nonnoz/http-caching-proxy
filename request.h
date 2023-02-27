@@ -37,7 +37,7 @@ struct Request {
         std::stringstream stream;
         stream << method << " " << uri << " HTTP/"
                << versionMajor << "." << versionMinor << "\n";
-        return stream;
+        return stream.str();
         /*for(std::vector<Request::HeaderItem>::const_iterator it = headers.begin();
             it != headers.end(); ++it)
         {

@@ -14,9 +14,9 @@ private:
 
 public:
     Client();
-    int getID() { return id; }
+    ~Client();
+    int id { return id; }
     int getFd() { return client_fd; }
-    void setID(int myid) { id = myid; }
     void setFd(int my_client_fd) { client_fd = my_client_fd; }
     void setIP(std::string myip) { ip = myip; }
     std::string getIP() { return ip; }

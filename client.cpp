@@ -4,8 +4,6 @@ int Client::id = -1;
 
 Client::Client(){
     id++;
-    client_fd = 0;
+    Client::setFd(0);
 }
-Client::~Client(){
-    close(client_fd);
-}
+
