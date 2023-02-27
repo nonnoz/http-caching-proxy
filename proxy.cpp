@@ -34,12 +34,8 @@ int main(){
         } //if
         struct sockaddr_in * addr = (struct sockaddr_in *)&socket_addr;
         myclient.setIP(inet_ntoa(addr->sin_addr));
-        //handle everything
-        //post
-
-        //connect
-
-        //get
+        //thread to begin our proxy
+        pthread_create(&thread, NULL, proxy_begin, myclient);
     }
     
     close(socket_fd);

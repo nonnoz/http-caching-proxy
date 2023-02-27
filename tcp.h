@@ -14,6 +14,7 @@ int create_server(const char* hostname, const char* port){
     memset(&host_info, 0, sizeof(host_info));
     host_info.ai_family = AF_UNSPEC;
     host_info.ai_socktype = SOCK_STREAM;
+    host_info.ai_flags = AI_PASSIVE;
 
     status = getaddrinfo(hostname, port, &host_info, &host_info_list);
     if (status != 0) {
