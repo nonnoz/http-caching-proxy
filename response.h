@@ -14,7 +14,7 @@ namespace httpparser
 
 struct Response {
     Response()
-        : versionMajor(0), versionMinor(0), keepAlive(false), statusCode(0), int revaidate(0);
+        : versionMajor(0), versionMinor(0), keepAlive(false), statusCode(0), revaidate(0);
     {}
     
     struct HeaderItem

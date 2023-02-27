@@ -6,3 +6,6 @@ Client::Client(){
     id++;
     client_fd = 0;
 }
+Client::~Client(){
+    close(client_fd);
+}
