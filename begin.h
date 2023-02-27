@@ -202,7 +202,7 @@ void * proxy_begin(Client * myclient){
                                     }  
                                 }
                                 if (iscache == 1){
-                                    Cache.push_back(request.line(),response);
+                                    Cache[request.line] = response;
                                 }
                             }
                         }
