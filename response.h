@@ -10,12 +10,9 @@
 #include <vector>
 #include <sstream>
 
-namespace httpparser
 
 struct Response {
-    Response()
-        : versionMajor(0), versionMinor(0), keepAlive(false), statusCode(0), revaidate(0);
-    {}
+    Response() : versionMajor(0), versionMinor(0), keepAlive(false), statusCode(0), revalidate(0){}
     
     struct HeaderItem
     {
@@ -33,7 +30,7 @@ struct Response {
     unsigned int statusCode;
     std::string status;
 
-    std::string line() const
+    std::string getLine() const
     {
         std::stringstream stream;
         stream << "HTTP/" << versionMajor << "." << versionMinor
@@ -47,8 +44,8 @@ struct Response {
 
         std::string data(content.begin(), content.end());
         stream << data << "\n";
-        return stream.str();
-    }*/
+        return stream.str();*/
+    }
 
     std::string getResponse(){
         std::stringstream stream;
@@ -67,7 +64,7 @@ struct Response {
     }
 };
 
-} // namespace httpparser
+// }  namespace httpparser
 
 #endif // HTTPPARSER_RESPONSE_H
 

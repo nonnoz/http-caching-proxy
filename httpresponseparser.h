@@ -13,9 +13,6 @@
 
 #include "response.h"
 
-namespace httpparser
-{
-
 class HttpResponseParser
 {
 public:
@@ -604,6 +601,6 @@ private:
     bool chunked;
 };
 
-} // namespace httpparser
+// } namespace httpparser
 
 #endif // HTTPPARSER_RESPONSEPARSER_H

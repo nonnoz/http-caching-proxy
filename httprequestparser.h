@@ -13,9 +13,6 @@
 
 #include "request.h"
 
-namespace httpparser
-{
-
 class HttpRequestParser
 {
 public:
@@ -620,6 +617,6 @@ private:
     bool chunked;
 };
 
-} // namespace httpparser
+// } namespace httpparser
 
 #endif // LIBAHTTP_REQUESTPARSER_H

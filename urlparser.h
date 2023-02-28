@@ -11,9 +11,6 @@
 #include <stdint.h>
 #include <assert.h>
 
-namespace httpparser
-{
-
 class UrlParser
 {
 public:
@@ -366,6 +363,6 @@ private:
     } url;
 };
 
-} // namespace httpparser
+// } namespace httpparser
 
 #endif // HTTPPARSER_URLPARSER_H

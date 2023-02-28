@@ -10,9 +10,6 @@
 #include <vector>
 #include <sstream>
 
-namespace httpparser
-{
-
 struct Request {
     Request()
         : versionMajor(0), versionMinor(0), keepAlive(false)
@@ -32,7 +29,7 @@ struct Request {
     std::vector<char> content;
     bool keepAlive;
 
-    std::string line() const
+    std::string getLine() const
     {
         std::stringstream stream;
         stream << method << " " << uri << " HTTP/"
@@ -51,7 +48,7 @@ struct Request {
     }
 };
 
-} // namespace httpparser
+// } namespace httpparser
 
 
 #endif // HTTPPARSER_REQUEST_H
