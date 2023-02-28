@@ -29,7 +29,7 @@
 #include <unordered_map>
 
 
-void *proxy_begin(Client *myclient);
+void *proxy_begin(void *ptr);
 std::string getTime();
 
-void get_cache
+// void get_cache
